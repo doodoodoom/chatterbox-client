@@ -4,22 +4,18 @@ var MessagesView = {
   
   initialize: function() {
     // fetch messages with the renderMessage method as callback
-    //debugger;
-    console.log(MessagesView.$chats);
-    var test = [{username: 'bob', text: 'something'}, {username: 'dylan', text: 'something else'}];
-    // debugger;
-    App.fetch(MessagesView.renderMessage(test));
+    var messages = App.messages;
+    for (var i = 0; i < messages.results.length; i ++) {
+      MessagesView.renderMessage(messages.results[i]);
+    }
   },
 
-  renderMessage: function(arrMessages) {
+  renderMessage: function(message) {
     //should be able to add messages to the DOM
     //pass in array of messages as parameter
     var html = '';
-    for (var i = 0; i < arrMessages.length; i ++) {
-      html += MessageView.render(arrMessages[i]);
-    }
+    html += MessageView.render(message);
     this.$chats.append(html);
-    
   }
 };
   
