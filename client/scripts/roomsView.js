@@ -15,15 +15,7 @@ var RoomsView = {
       if (rooms.results[i].roomname) {
         RoomsView.renderRoom(rooms.results[i]);
       }
-    }
-    //console.log(RoomsView.$select.val());
-    // this.$select
-    //   .change(function() {
-    //     this.selected = $( "select option:checked" ).text();
-    //     console.log(this.selected);
-    //   })
-    //   .trigger( "change" );
-    
+    }  
   },
 
   renderRoom: function(room) {
@@ -31,11 +23,4 @@ var RoomsView = {
     html += Rooms.render(room);
     this.$select.append(new Option(room.roomname, html));
   }
-
 };
-
-//   $( "select" )
-//   .change(function() {
-//     console.log($( "select option:selected" ))
-//   })
-//   .trigger( "change" );

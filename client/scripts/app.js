@@ -9,7 +9,6 @@ var App = {
   initialize: function() {
     App.username = window.location.search.substr(10);
 
-    FormView.initialize();
     
     
 
@@ -18,6 +17,7 @@ var App = {
     App.fetch( () => {
       RoomsView.initialize();
       MessagesView.initialize();
+      FormView.initialize();
       App.stopSpinner();
     });
   },
