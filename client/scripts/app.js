@@ -10,12 +10,13 @@ var App = {
     App.username = window.location.search.substr(10);
 
     FormView.initialize();
-    RoomsView.initialize();
+    
     
 
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch( () => {
+      RoomsView.initialize();
       MessagesView.initialize();
       App.stopSpinner();
     });
